@@ -4,27 +4,13 @@
  нацело делящихся на 3, она должна выводить ‘Fizz’, а для чисел, делящихся на 5 (но не на 3) – ‘Buzz’.
  */
 
-function fizzBuzz(n = 100) {
 
-    for (let i=1; i <= n; i++){
-        if ((i%3==0) && (i%5==0))
-            console.log(`${i} FizzBuzz`);
-    else
-        console.log(`${i} ${!(i%3)?'Fizz':(!(i%5)?'Buzz':'')}`);
+for (var num = 1; num <= 100; num++) {
+    var messge = '';
+    if (num % 3 == 0) {  //если num при делении на 3 будет без остатка
+        messge += "Fizz";  //messge = messge + "Fizz";
+    } else if (num % 5 == 0) { //если num при делении на 5 будет без остатка и исключается вариант с делением на 3, так как else
+        messge += "Buzz";  //messge = messge + "Buzz";
     }
-
-}
-
-fizzBuzz();
-
-
-
-//или из кн
-for (var n = 1; n <= 100; n++) {
-    var output = "";
-    if (n % 3 == 0)
-        output += "Fizz";
-    if (n % 5 == 0)
-        output += "Buzz";
-    console.log(output || n);
+    console.log(messge || num);  // выводит в консоль первое значение которое true, важно чтоб первое выводилось, если тру messge
 }

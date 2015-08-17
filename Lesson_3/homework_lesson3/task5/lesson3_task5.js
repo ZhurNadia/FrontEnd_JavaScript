@@ -13,24 +13,36 @@
  Когда справитесь, сделайте размер доски переменным, чтобы можно было создавать доски любого размера.
  */
 
-var size = 8;
-
-var board = "";
-
-for (var y = 0; y < size; y++) {
-    for (var x = 0; x < size; x++) {
-        if ((x + y) % 2 == 0)
-            board += " ";
+var chess = "";
+for (var line1 = 0; line1 < 8; line1++) {
+    for (var line2 = 0; line2 < 8; line2++) {
+        if ((line2 + line1) % 2 == 0)
+            chess += " ";
         else
-            board += "#";
+            chess += "#";
     }
-    board += "\n";
+    chess += "\n";
 }
+console.log(chess);
 
-console.log(board);
+//сделайте размер доски переменным, чтобы можно было создавать доски любого размера.
+
+var quantityHashes = 8;
+var chess = "";
+for (var line1 = 0; line1 < quantityHashes; line1++) {
+    for (var line2 = 0; line2 < quantityHashes; line2++) {
+        if ((line2 + line1) % 2 == 0)
+            chess += " ";
+        else
+            chess += "#";
+    }
+    chess += "\n";
+}
+console.log(chess);
 
 
-//вариант
+
+//поискала еще пути решения и нашла такой вариант, только он выводит 5 решеток в строку
 for(var k in {8:1, 9: 2}){
     for(var w = k, s ='', i = w * w - 1; i >=0; i--)
         s += ((i + (0|(i / w))*((w - 1) % 2)) % 2 ? ' ':'#') + (i % w ? '' : '\n');
@@ -38,14 +50,14 @@ for(var k in {8:1, 9: 2}){
 }
 
 
-//И если хочется нетрадиционности, то можно так:
-    var SIZE=prompt("Size?");
+//И вот какой-то, пишут что это нетрадиционный вариант:
+var SIZE = prompt("Size?");
 function add(str) { return str += str[str.length-1]=='#' ? ' ' : '#' ; }
 function query(str) { return str.length<SIZE ? query(add(str)) : str ; }
 console.log( query('').split('').map(query).join('\n') );
 
 
-//Или
+//Или через функцию и массивы:
 chessBoard = function(n){
     var a;
     return n <= 1 ? ['#']
@@ -57,23 +69,3 @@ for(var k in {8:1, 9: 2})
     console.log(chessBoard(k).join('\n'));
 
 
-// Так хорошо?
-var result = '', line, row;
-for(row = 1; row <= 8; row++) {
-    for(line = 1; line <= 8; line++) {
-        if(row % 2 == 0) {
-            if(line % 2 == 0) {
-                result+= '#';
-            } else {
-                result+= ' ';
-            }
-        } else {
-            if(line % 2 == 0) {
-                result+= ' ';
-            } else {
-                result+= '#';
-            }
-        }
-    }
-    result='';
-}
