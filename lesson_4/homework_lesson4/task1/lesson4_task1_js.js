@@ -62,7 +62,7 @@ alert( fib(3) ); // 2
 alert( fib(7) ); // 13
 alert( fib(77) ); // 5527939700884757
 
-//или
+/** ВАРИАНТ 3
 alert(fib(+prompt('Которое число Фибоначчи хотите увидеть?')));
 
 function fib(n) {
@@ -75,8 +75,10 @@ function fib(n) {
     }
     return f;
 }
+*/
 
-//Фибрначчи через цикл:
+
+/** ВАРИАНТ 4 Фибрначчи через цикл:
 
     function Fib(n){
         var a = 1;
@@ -91,3 +93,50 @@ function fib(n) {
         return c;
     }
 alert(Fib(77));
+
+ */
+
+/** ВАРИАНТ 5  - ИГ
+ function exercise1() {
+
+    //Running script
+    var fibNumber = +prompt('Введите n-e число Фибоначчи', '');
+    if (fibNumber >= 0) {
+        if (fibNumber == 0) {
+            alert(0);
+        } else {
+            function fib(n) {
+                if (fibNumber >= 0) {
+                    if (n >= 1) {
+                        return fib(n - 1) + fib(n - 2);
+                    } else {
+                        return -n;
+                    }
+                }
+            }
+            alert(fib(fibNumber));
+        }
+    } else {
+        alert('Вы ввели отрицательное число');
+    }
+}
+ */
+
+/** ВАРИАН 6 - ЕВ
+ function fib(n) {
+  var num;
+//recursive calls itself to the time when "n" became >=2
+  if (n >= 2) {
+    num = fib(n - 1) + fib(n - 2);
+  }
+
+  //if number = 2 or 1 return "1" because first two numbers in fibonacci are - 1;
+  else {
+    num = n;
+  }
+
+  return num;
+}
+
+ alert(fib(prompt("Введите желаемое число")));
+ */
