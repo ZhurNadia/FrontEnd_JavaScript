@@ -1,0 +1,36 @@
+div .exper_bar_text {
+    margin: 12px 0;
+}
+
+.exper_bar_text em {
+    padding-left: 20px;
+    color: #518dc1;
+    font-style: normal;
+}
+
+.accord_article {
+    margin-bottom: 4px;
+}
+
+.panel_bord-rad {
+    border-radius: 4px;
+}
+
+.img_skills {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    fill: #518dc1;
+}
+
+.img_sk1 {
+    background: url("../images/about_us/responsive2.svg");
+}
+
+.img_sk2 {
+    background: url("../images/about_us/seo44.png");
+}
+
+.img_sk3 {
+    background: url("../images/about_us/block1.svg");
+}
