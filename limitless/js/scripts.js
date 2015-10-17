@@ -82,6 +82,17 @@ $(document).ready(function() {
 new WOW().init();
 $("#promo").backstretch("images/fog.jpg");
 
+jQuery(document).ready(function(){
+    jQuery("#contact-form").validationEngine({
+        promptPosition : "bottomLeft",
+        scroll: scroll,
+        autoHidePrompt: true,
+        autoHideDelay: 3000,
+        scrollOffset: 100
+    });
+});
+
+
 
 
 
